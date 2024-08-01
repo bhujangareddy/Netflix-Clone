@@ -1,0 +1,354 @@
+@import url('https://fonts.googleapis.com/css2?family=Martel+Sans:wght@600&family=Poppins:wght@300;400;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: black;
+}
+
+.main {
+    background-image: url("bg.jpg");
+    background-position: center center; /*image focus on displaying central part of the image while decreasing the width.So,this usage makes image responsive */
+    background-repeat: no-repeat;/* it is not repeating actually as the image background-size is used.So we can remove this property */
+
+    /* background-size:cover; */
+    background-size: max(1200px,100vw); /* harry Sir used this inplace of cover i used which works as same*/
+
+    height: 70vh;
+    position: relative;
+}
+/* I used position property value relative,which means here .main class content will get positioned according to its parent which is body */
+/* The background-size property value 'cover' will fill the image in entire width(default 100%) and height(80vh) given.It makes background image responsive as the width of screen changes.We cannot use width(100% or 100vw) here inplace of this property.Why? Do Research on it*/
+
+.main .box {
+    height: 70vh;
+    width: 100%;
+    background-color: black;
+    opacity: 0.69;
+    position: absolute;
+    top: 0;
+}
+/* Another .box class element(div) inside main is used.Beacuse we cannot set opacity like filter properties on backgroundimages.So,i used same height box filled with background-color 'black' in which can set opacity for the background-color.And i used width property eventhough by default it takes 100% width ,and this can be helpful in making responsive */
+/* I used position property value absolute,which means here .box class content will get positioned according to its nearest postioned(top:0) parent which is .main class(div) */
+
+nav {
+    width: 60vw;
+    height: 100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav img {
+    width: 130px;
+    position: relative;
+    z-index: 10;
+}
+
+nav button {
+    position: relative;
+    z-index: 10;
+}
+
+.hero {
+    height: calc(100% - 100px); /* reducing nav size 62px will assign the separater at correct place that we need */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    position: relative;
+    gap: 23px;
+    padding: 0 30px;
+}
+
+.hero > :first-child { /* this selector means that inside .hero element immediate firstchild(span).That is why we have space between and this can also be written as span:first-child which do similar task */
+    font-size: 48px;
+    font-weight: bolder;
+    text-align: center;
+    /* text-align center is used to make it responsive */
+}
+
+.hero > :nth-child(2) {
+    font-size: 24px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.hero > :nth-child(3) {
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.separation {
+    height: 7px;
+    background-color: rgb(62, 61, 61);
+    position: relative;
+    z-index: 2;
+}
+
+.btn {
+    padding: 3px 8px;
+    color: white;
+    background-color: rgba(248, 243, 243, 0.021);
+    border-radius: 4px;
+    border: 1px solid white;
+    cursor: pointer;
+
+}
+
+.btn-red-sm {
+    background-color: red;
+}
+
+.btn-red {
+    background-color: red;
+    padding: 3px 24px;
+    font-size: 20px;
+}
+
+
+.hero-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+.main input {
+    padding: 7px 101px 8px 14px;
+    color: white; /* this is used to give color to the content that user type in place of place holder */
+    font-size: 12px;
+    border-radius: 4px;
+    background-color: rgba(23, 23, 23, 0.7);
+    border: 1px solid rgba(246, 238, 238, 0.5);
+}
+
+.first {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 80vw;
+    margin: auto;
+    color: white;
+    /* flex-wrap: wrap; */
+}
+
+.secimage {
+    position: relative;
+}
+
+.secimage img {
+    width: 555px;
+    position: relative;
+    z-index: 1;
+}
+
+.secimage video {
+    width: 400px;
+    position: absolute;
+    top: 90px;
+    right: 80px;
+}
+
+.third .secimage video {
+    width: 350px;
+    position: absolute;
+    top: 36px;
+    right: 100px;
+}
+
+.first > div {
+    display: flex;
+    flex-direction: column;
+    /* padding: 34px 0; */
+}
+
+.first div span:nth-child(1) {
+    font-size: 48px;
+    font-weight: bolder;
+}
+
+.first div span:nth-child(2) {
+    font-size: 24px;
+}
+
+.faq {
+    margin: 40px 0;
+}
+
+.faq h2{
+    padding: 20px 0;
+    color: white;
+    text-align: center;
+    font-size: 48px;
+}
+
+.faqbox {
+    display: flex;
+    justify-content: space-between;
+    width: 70vw;
+    margin: 8px auto;
+    padding: 24px;
+    color: white;
+    background-color: rgb(49 47 47 / 98%);
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.faqbox svg {
+    filter: invert(1);
+}
+
+.faqbox:hover {
+    background-color: #414141;  
+}
+
+.faq p {
+    transition: all 0.5s ease-out;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    padding: 60px 10px 20px 10px;
+}
+
+.faq .hero-buttons input{
+    padding: 7px 101px 8px 14px;
+    color: white; /* this is used to give color to the content that user type in place of place holder */
+    font-size: 12px;
+    border-radius: 4px;
+    background-color: rgba(23, 23, 23, 0.7);
+    border: 1px solid rgba(246, 238, 238, 0.5);
+}
+
+footer {
+    color: white;
+    width: 60vw;
+    margin: auto;
+    padding: 34px;
+}
+
+
+footer .call {
+    padding: 34px 0;
+}
+
+footer div u {
+    cursor: pointer;
+}
+
+.footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.footer-item {
+    display: flex;
+    flex-direction: column;
+    gap: 23px;
+}
+
+.footer a {
+    color: white;
+    font-size: 14px;
+}
+
+footer div .btn {
+    font-size: 16px;
+    margin: 20px 0;
+}
+
+footer .india {
+    font-size: 14px;
+} 
+
+@media screen and (max-width: 1300px) {
+    .first {
+        flex-wrap: wrap;
+        padding: 56px 0;
+    }
+}
+
+@media screen and (max-width: 1000px){
+    .footer {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    .first div span:nth-child(1) {
+        text-align: center;
+    }
+
+    .first div span:nth-child(2) {
+        text-align: center;
+    }
+}
+
+@media  screen and (max-width: 600px) {
+    nav {
+        width: 90vw;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .hero > :nth-child(1) {
+        font-size: 32px;
+    }
+
+    .hero > :nth-child(2) {
+        font-size: 18px;
+    }
+
+    .hero > :nth-child(3) {
+        font-size: 18px;
+    }
+
+    .secimage img {
+        width: 305px;
+    }
+
+    .secimage video {
+        width: 225px;
+        top: 50px;
+        right: 40px;
+    }
+
+    .third .secimage video {
+        width: 190px;
+        right: 60px;
+        top: 20px;
+    }
+
+    .first div span:nth-child(1) {       
+        font-size: 32px;
+    }
+
+    .first div span:nth-child(2) {
+        font-size: 18px;
+    }
+
+    .faq p {
+        font-size: 16px;
+    }
+
+    .faq h2 {
+        font-size: 32px;
+    }
+
+    .faqbox {
+        font-size: 18px;
+    }
+
+    footer {
+        width: 90vw;
+        padding: 6px;
+    }
+}
